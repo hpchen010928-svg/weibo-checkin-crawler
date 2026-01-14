@@ -1,0 +1,18 @@
+# 复制为 config.yaml 并填入真实配置
+weibo_data_url: "https://m.weibo.cn/api/container/getIndex"
+poi_file: "pois.csv"
+timeout: 20
+
+headers:
+  User-Agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
+  Referer: "https://m.weibo.cn/"
+  Cookie: "your_cookie_here"
+
+cookies: {}
+
+# params 会被带入请求参数，脚本会追加 page 与 date。
+params:
+  openApp: "0"
+  page_type: "searchall"
+  # 可按需添加地理筛选参数，例如：
+  # containerid: "100101B2094752D1690FAF4591"
