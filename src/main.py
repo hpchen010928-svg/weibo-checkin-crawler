@@ -11,7 +11,6 @@ from typing import Dict, Iterable, List, Optional, Tuple
 
 import requests
 import yaml
-from dateutil import parser as date_parser
 
 
 @dataclass
@@ -54,13 +53,6 @@ def load_config(path: str) -> Dict:
         raise FileNotFoundError(f"配置文件不存在: {path}")
     with open(path, "r", encoding="utf-8") as handle:
         return yaml.safe_load(handle)
-
-
-def parse_created_at(raw: str) -> Optional[datetime]:
-    try:
-        return date_parser.parse(raw)
-    except (ValueError, TypeError):
-        return None
 
 
 def iterate_dates(start_date: date, end_date: date) -> Iterable[date]:

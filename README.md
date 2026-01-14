@@ -8,7 +8,7 @@
 - 输出字段：`poi_id, poi_name, checkin_count, raw_poi`。
 - 按天保存 CSV 文件（例如 `data/2024-08-01.csv`），写入前按 `poi_id` 去重。
 - 支持断点续爬：进度写入 `state.json`，重复运行不会重复抓。
-- 支持 `--min-checkin-count` 筛选最小签到次数（默认 100）。
+- 支持 `--min-checkin-count` 筛选最小签到次数（默认 100，仅保留 `checkin_count > min` 的 POI）。
 - 支持 `--log-level` 输出详细日志。
 
 ## 环境准备
@@ -80,4 +80,3 @@ python src/main.py \
 
 - 默认在 `output_dir/state.json` 保存进度。
 - 支持 `--state-file` 指定自定义路径。
-
